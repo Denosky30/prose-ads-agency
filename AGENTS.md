@@ -1,0 +1,26 @@
+# AGENTS.md — Prose Ads Website
+
+## Architecture
+
+- `index.html` — the entire site. Single page, ten anchored sections (`#services`, `#results`, `#why`, `#process`, `#testimonials`, `#pricing`, `#faq`, `#contact`). Edit copy here.
+- `styles.css` — all styling. CSS variables at `:root` control palette/type. Mobile breakpoint 640px, tablet 1000px.
+- `app.js` — mobile nav toggle, IntersectionObserver reveals, FAQ uses native `<details>`, contact form POSTs JSON to `/.netlify/functions/contact` and swaps to a thank-you state.
+- `netlify/functions/contact.mts` — validates (all fields, email regex), inserts into `enquiries`, returns 201. Falls back to `{ok:true, stored:false}` if the DB isn't migrated yet so conversion never breaks.
+- `db/schema.ts` + `db/index.ts` — Drizzle schema/client (`drizzle-orm/netlify-db`; connection is automatic, no connection string).
+- `drizzle.config.ts` — `out` must stay `./netlify/database/migrations` for auto-apply on deploy.
+- `netlify.toml` — publish root `.`, functions dir, security + cache headers.
+
+## Conventions
+
+- Static-first: no framework, no build. Keep total JS small; prefer CSS and native HTML (`<details>` for FAQ).
+- Tone: confident, friendly, results-driven, short sentences. CTAs point to `#contact`.
+- Colors: paper `#faf7f1`, ink `#101014`, accent coral `#ff4d24`, gold `#f5b301` for stats/stars.
+- Fonts via Google Fonts (Fraunces + DM Sans). Never use emojis in UI; icons are inline SVG.
+- Accessibility: skip link, labelled navs, `role="status/alert"` on form states, visible focus styles.
+
+## Non-obvious decisions
+
+- Template scaffold was unreachable (GitHub clone failed), so the project is hand-built static rather than TanStack Start. This is intentional and keeps load times minimal.
+- Contact persistence uses Netlify Database (Postgres), not Netlify Forms or JSON files, per platform data-storage rules. The function's try/catch fallback exists because the DB provisions on first connection — the form must convert even on the very first deploy.
+- No `<img>` tags: visuals are CSS/SVG for speed. If photos are added later, give every one `alt` text, explicit dimensions, and `loading="lazy"`.
+- Contact details are realistic placeholders (hello@proseads.agency, +1 (415) 555-0132, Austin TX). Swap before production.
