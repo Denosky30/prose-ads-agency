@@ -92,7 +92,7 @@
       track.style.transform = "translateX(-" + index * 100 + "%)";
       for (var j = 0; j < dots.length; j++) dots[j].setAttribute("aria-selected", j === index ? "true" : "false");
     }
-    function restart() { stop(); timer = setInterval(function () { go(index + 1); }, 6000); }
+    function restart() { stop(); timer = setInterval(function () { go(index + 1); }, 8000); }
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
   }
 

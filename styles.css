@@ -182,8 +182,11 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700}
 .slider-dots{display:flex;gap:.5rem}
 .slider-dots button{width:10px;height:10px;border-radius:50%;border:0;background:#d8d8de;padding:0;cursor:pointer}
 .slider-dots button[aria-selected="true"]{background:var(--accent)}
-.review-image{background:transparent;border:0;padding:0}
-.review-image img{display:block;width:100%;max-width:480px;margin:0 auto;border-radius:12px;box-shadow:0 12px 32px rgba(16,16,20,.22)}
+.review-card{padding:0;overflow:hidden}
+.review-card img{display:block;width:100%;height:auto}
+.review-card blockquote{padding:1.15rem 1.4rem 0;font-size:1.02rem;line-height:1.65}
+.review-card blockquote p{margin:0}
+.review-card figcaption{padding:.95rem 1.4rem 1.4rem}
 .visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 @media (prefers-reduced-motion:reduce){.slider-track{transition:none}}
 /* Reveal */
