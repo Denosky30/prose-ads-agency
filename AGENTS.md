@@ -22,7 +22,7 @@
 
 - Template scaffold was unreachable (GitHub clone failed), so the project is hand-built static rather than TanStack Start. This is intentional and keeps load times minimal.
 - Contact persistence uses Netlify Database (Postgres), not Netlify Forms or JSON files, per platform data-storage rules. The function's try/catch fallback exists because the DB provisions on first connection — the form must convert even on the very first deploy.
-- Contact details: no email or phone is published on the site yet — the enquiry form is the contact channel until the real WhatsApp number and email are added. Social links are also pending real profile URLs.
+- Contact details: no email or phone is published on the site yet — the enquiry form is the contact channel until the real WhatsApp number and email are added. Social links: Instagram is live (@dave_leadgen, footer + contact section); X, LinkedIn and TikTok still pending their profile URLs.
 - Pricing has a ₦ / $ toggle (see `app.js` `setCurrency`); amounts live in `data-ngn` / `data-usd` attributes on `.price-amount .amount`.
 - The Results section was replaced by a Founding Offer section (`#founding`): 5 founding places at founding rates in exchange for a public case study. Real testimonials from the first run of the agency go here when they arrive — see the TODO comment in `index.html`.
 - Logo is an inline SVG gradient monogram (coral → gold "P") in the header and footer; the favicon is still the flat coral "P".
