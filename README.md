@@ -44,5 +44,5 @@ Migrations in `netlify/database/migrations/` apply automatically on deploy.
 
 ## Contact details on the site
 
-No email address or phone number is published yet — the enquiry form (saved to Netlify Database) is the contact channel until the real ones are added. Still to add: real WhatsApp number, X / LinkedIn profile URLs, and real testimonials from the first run of the agency. Instagram is live (@dave_leadgen, footer + contact section).
+No email address or phone number is published yet — the enquiry form (saved to Netlify Database) is the contact channel until the real ones are added. Still to add: real WhatsApp number, X profile URL, and real testimonials from the first run of the agency. Instagram (@dave_leadgen) and LinkedIn (David Chibuike) are live in the footer + contact section.
 
