@@ -55,8 +55,14 @@
     var dotsWrap = document.getElementById("reviewDots");
     var prevBtn = document.getElementById("reviewPrev");
     var nextBtn = document.getElementById("reviewNext");
+    var viewport = slider.querySelector(".slider-viewport");
     var controls = slider.querySelector(".slider-controls");
     var index = 0, timer = null;
+    // Keep the viewport exactly as tall as the active slide, so short
+    // reviews don't sit in a tall card with empty space at the bottom.
+    function setHeight() { if (viewport) viewport.style.height = slides[index].offsetHeight + "px"; }
+    window.addEventListener("resize", setHeight);
+    window.addEventListener("load", setHeight);
     if (slides.length <= 1) {
       if (controls) controls.style.display = "none";
     } else {
@@ -90,6 +96,7 @@
     function go(n) {
       index = (n + slides.length) % slides.length;
       track.style.transform = "translateX(-" + index * 100 + "%)";
+      setHeight();
       for (var j = 0; j < dots.length; j++) dots[j].setAttribute("aria-selected", j === index ? "true" : "false");
     }
     function restart() { stop(); timer = setInterval(function () { go(index + 1); }, 8000); }

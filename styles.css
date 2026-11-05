@@ -73,6 +73,7 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700}
 .platforms svg{width:22px;height:22px}
 /* Sections */
 .section{padding:4.5rem 0}
+section[id]{scroll-margin-top:4.5rem}
 .kicker{color:var(--accent-deep);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;margin:0 0 .5rem}
 .kicker-light{color:var(--gold)}
 .section-sub{color:var(--muted);max-width:44rem;font-size:1.08rem}
@@ -173,9 +174,9 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700}
 .footer-base{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid #26262f;margin-top:2rem;padding-top:1.2rem;font-size:.88rem}
 /* Reviews slider */
 .slider{margin-top:2rem}
-.slider-viewport{overflow:hidden;border-radius:var(--radius)}
-.slider-track{display:flex;transition:transform .55s ease}
-.slider-track .slide{flex:0 0 100%;margin:0}
+.slider-viewport{overflow:hidden;border-radius:var(--radius);transition:height .55s ease}
+.slider-track{display:flex;align-items:flex-start;transition:transform .55s ease}
+.slider-track .slide{flex:0 0 100%;min-width:0;margin:0}
 .slider-controls{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.2rem}
 .slider-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:1.15rem;line-height:1;cursor:pointer;color:var(--ink)}
 .slider-btn:hover{border-color:var(--ink)}
@@ -183,7 +184,7 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700}
 .slider-dots button{width:10px;height:10px;border-radius:50%;border:0;background:#d8d8de;padding:0;cursor:pointer}
 .slider-dots button[aria-selected="true"]{background:var(--accent)}
 .review-card{padding:0;overflow:hidden}
-.review-card img{display:block;width:100%;height:auto}
+.review-card img{display:block;width:100%;max-width:100%;height:auto}
 .review-card blockquote{padding:1.15rem 1.4rem 0;font-size:1.02rem;line-height:1.65}
 .review-card blockquote p{margin:0}
 .review-card figcaption{padding:.95rem 1.4rem 1.4rem}
