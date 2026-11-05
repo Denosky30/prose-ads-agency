@@ -20,7 +20,12 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(250,247,241,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0}
 .brand{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--ink);font-weight:700;font-size:1.15rem}
-.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--accent);color:#fff;font-family:var(--font-display);font-weight:900;font-size:1.4rem}
+.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:none;font-family:var(--font-display);font-weight:900;font-size:1.4rem}
+.brand-mark svg{width:38px;height:38px;display:block;border-radius:11px}
+/* Announcement bar */
+.announce{background:var(--dark);color:#fff;text-align:center;font-size:.92rem;padding:.55rem 1rem}
+.announce a{color:var(--gold);font-weight:700}
+.announce strong{color:#fff}
 .site-nav{display:flex;gap:1.4rem}
 .site-nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.98rem}
 .site-nav a:hover{color:var(--accent-deep)}
@@ -45,7 +50,8 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700}
 .dot{width:9px;height:9px;border-radius:50%;background:#1db954;display:inline-block}
 .lede{font-size:1.18rem;color:#33322d;max-width:34rem}
 .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0}
-.hero-proof{list-style:none;display:flex;gap:2rem;margin:1.8rem 0 0;padding:1.2rem 0 0;border-top:1px solid var(--line)}
+.hero-assurance{font-size:.95rem;color:var(--muted);margin:.4rem 0 0}
+.hero-assurance::before{content:"✓ ";color:#1db954;font-weight:700}
 .hero-proof strong{display:block;font-family:var(--font-display);font-size:1.6rem}
 .hero-proof span{font-size:.9rem;color:var(--muted)}
 .hero-card{background:var(--dark);color:#fff;border-radius:24px;padding:1.6rem;box-shadow:var(--shadow);transform:rotate(1.2deg)}
@@ -120,6 +126,13 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700}
 .price ul li::before{content:"✓ ";color:#4ade80;font-weight:700}
 .price .btn{margin-top:auto}
 .fineprint{color:#9d9dab;font-size:.86rem;margin-top:1.2rem}
+.guarantee{color:#fff;font-weight:700;text-align:center;margin-top:1rem}
+.guarantee::before{content:"✓ ";color:#4ade80}
+.founding-note{color:#c9c9d4;text-align:center;margin-top:1.5rem;font-size:.95rem}
+/* Currency toggle */
+.currency-toggle{display:inline-flex;gap:.4rem;background:var(--dark-2);border:1px solid #2c2c38;border-radius:999px;padding:.3rem;margin-top:1.2rem}
+.currency-toggle button{background:transparent;border:0;color:#c6c6d2;font:inherit;font-weight:700;padding:.5rem 1.1rem;border-radius:999px;cursor:pointer}
+.currency-toggle button.active{background:var(--accent);color:#fff}
 /* FAQ */
 .faq{border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:.7rem;overflow:hidden}
 .faq summary{cursor:pointer;padding:1.1rem 1.3rem;font-weight:700;list-style:none}
