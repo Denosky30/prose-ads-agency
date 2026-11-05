@@ -45,3 +45,5 @@ Migrations in `netlify/database/migrations/` apply automatically on deploy.
 ## Contact details on the site
 
 No email address or phone number is published yet — the enquiry form (saved to Netlify Database) is the contact channel until the real ones are added. Still to add: real WhatsApp number, X / LinkedIn / Instagram profile URLs, and real testimonials from the first run of the agency.
+
+Deploy test: direct push to main on 5 November 2026 to verify Netlify auto-deploy after linking GitHub.
