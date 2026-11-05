@@ -130,8 +130,10 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700}
 .guarantee::before{content:"✓ ";color:#4ade80}
 .founding-note{color:#c9c9d4;text-align:center;margin-top:1.5rem;font-size:.95rem}
 /* Currency toggle */
-.currency-toggle{display:inline-flex;gap:.4rem;background:var(--dark-2);border:1px solid #2c2c38;border-radius:999px;padding:.3rem;margin-top:1.2rem}
-.currency-toggle button{background:transparent;border:0;color:#c6c6d2;font:inherit;font-weight:700;padding:.5rem 1.1rem;border-radius:999px;cursor:pointer}
+.currency-switch{display:flex;align-items:center;justify-content:center;gap:.9rem;flex-wrap:wrap;margin-top:1.4rem}
+.currency-label{color:#fff;font-weight:700;margin:0;font-size:1.05rem}
+.currency-toggle{display:inline-flex;gap:.4rem;background:var(--dark-2);border:1px solid #2c2c38;border-radius:999px;padding:.4rem}
+.currency-toggle button{background:transparent;border:0;color:#c6c6d2;font:inherit;font-weight:700;font-size:1.05rem;padding:.7rem 1.6rem;border-radius:999px;cursor:pointer}
 .currency-toggle button.active{background:var(--accent);color:#fff}
 /* FAQ */
 .faq{border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:.7rem;overflow:hidden}
