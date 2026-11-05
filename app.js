@@ -30,6 +30,23 @@
     els.forEach(function (el) { el.classList.add("visible"); });
   }
 
+  // Pricing currency toggle (₦ / $)
+  var currBtns = document.querySelectorAll(".currency-toggle [data-currency]");
+  var amounts = document.querySelectorAll(".price-amount .amount");
+  function setCurrency(cur) {
+    amounts.forEach(function (el) {
+      el.textContent = cur === "usd" ? el.getAttribute("data-usd") : el.getAttribute("data-ngn");
+    });
+    currBtns.forEach(function (b) {
+      var active = b.getAttribute("data-currency") === cur;
+      b.classList.toggle("active", active);
+      b.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
+  currBtns.forEach(function (b) {
+    b.addEventListener("click", function () { setCurrency(b.getAttribute("data-currency")); });
+  });
+
   // Contact form -> Netlify Function (DB-backed), thank-you inline.
   var form = document.getElementById("contactForm");
   if (!form) return;
@@ -72,7 +89,7 @@
       ok.hidden = false;
       ok.scrollIntoView({ behavior: "smooth", block: "center" });
     }).catch(function () {
-      showError("Something went wrong sending your message. Please email hello@proseads.agency directly.");
+      showError("Something went wrong sending your message. Please try again in a moment.");
       btn.disabled = false;
       btn.textContent = "Book My Free Consultation";
     });

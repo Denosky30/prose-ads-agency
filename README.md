@@ -1,10 +1,10 @@
 # Prose Ads — Advertising Agency Website
 
-A fast, mobile-first single-page site for **Prose Ads**, an advertising agency that helps US businesses grow with paid ads and creative campaigns. Every section drives toward one action: booking a free consultation.
+A fast, mobile-first single-page site for **Prose Ads**, an advertising agency in Nigeria that helps ecommerce brands in Nigeria, Europe and worldwide grow with paid ads and creative campaigns. Every section drives toward one action: booking a free ads audit.
 
 ## What it is
 
-- Single-page marketing site (`index.html`) with Hero, Trust bar, Services, Results, Why Choose Us, Process, Testimonials, Pricing, FAQ, and Final CTA + Contact
+- Single-page marketing site (`index.html`) with Hero, Trust bar, Services, Founding Offer, Why Choose Us, Process, Pricing, FAQ, and Final CTA + Contact
 - Contact form posts to a Netlify Function (`netlify/functions/contact.mts`) and shows an inline thank-you message
 - Enquiries persist in Netlify Database (managed Postgres) via Drizzle ORM; migration in `netlify/database/migrations/`
 - No build step — static HTML/CSS/JS served directly, styled with a premium editorial look (Fraunces display + DM Sans body, coral `#ff4d24` accent)
@@ -44,4 +44,4 @@ Migrations in `netlify/database/migrations/` apply automatically on deploy.
 
 ## Contact details on the site
 
-Demo details: hello@proseads.agency · +1 (415) 555-0132 · Austin, TX, USA. Replace with real ones before launch.
+No email address or phone number is published yet — the enquiry form (saved to Netlify Database) is the contact channel until the real ones are added. Still to add: real WhatsApp number, X / LinkedIn / Instagram profile URLs, and real testimonials from the first run of the agency.
