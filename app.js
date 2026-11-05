@@ -47,6 +47,55 @@
     b.addEventListener("click", function () { setCurrency(b.getAttribute("data-currency")); });
   });
 
+  // Reviews slider: auto-advance, arrows, dots, swipe; pauses on hover/focus.
+  var slider = document.getElementById("reviewSlider");
+  if (slider) {
+    var track = document.getElementById("reviewTrack");
+    var slides = track.children;
+    var dotsWrap = document.getElementById("reviewDots");
+    var prevBtn = document.getElementById("reviewPrev");
+    var nextBtn = document.getElementById("reviewNext");
+    var controls = slider.querySelector(".slider-controls");
+    var index = 0, timer = null;
+    if (slides.length <= 1) {
+      if (controls) controls.style.display = "none";
+    } else {
+      for (var i = 0; i < slides.length; i++) {
+        (function (n) {
+          var d = document.createElement("button");
+          d.type = "button";
+          d.setAttribute("role", "tab");
+          d.setAttribute("aria-label", "Go to review " + (n + 1));
+          d.addEventListener("click", function () { go(n); restart(); });
+          dotsWrap.appendChild(d);
+        })(i);
+      }
+      var dots = dotsWrap.children;
+      var touchX = null;
+      prevBtn.addEventListener("click", function () { go(index - 1); restart(); });
+      nextBtn.addEventListener("click", function () { go(index + 1); restart(); });
+      slider.addEventListener("mouseenter", stop);
+      slider.addEventListener("mouseleave", restart);
+      slider.addEventListener("focusin", stop);
+      slider.addEventListener("focusout", restart);
+      track.addEventListener("touchstart", function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
+      track.addEventListener("touchend", function (e) {
+        if (touchX === null) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) { go(index + (dx < 0 ? 1 : -1)); restart(); }
+        touchX = null;
+      }, { passive: true });
+      go(0); restart();
+    }
+    function go(n) {
+      index = (n + slides.length) % slides.length;
+      track.style.transform = "translateX(-" + index * 100 + "%)";
+      for (var j = 0; j < dots.length; j++) dots[j].setAttribute("aria-selected", j === index ? "true" : "false");
+    }
+    function restart() { stop(); timer = setInterval(function () { go(index + 1); }, 6000); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  }
+
   // Contact form -> Netlify Function (DB-backed), thank-you inline.
   var form = document.getElementById("contactForm");
   if (!form) return;
