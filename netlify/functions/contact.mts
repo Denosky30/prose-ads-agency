@@ -2,7 +2,7 @@
 // Graceful fallback: if the database is not provisioned yet, accept the
 // submission and log it so the form still shows a thank-you message.
 import type { Config } from "@netlify/functions";
-import { db } from "../../db/index.js";
+import { getDb } from "../../db/index.js";
 import { enquiries } from "../../db/schema.js";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -32,6 +32,7 @@ export default async (req: Request) => {
   }
 
   try {
+    const db = getDb();
     const [row] = await db
       .insert(enquiries)
       .values({ name, business, email, budget, message })
