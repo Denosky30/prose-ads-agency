@@ -44,5 +44,5 @@ Migrations in `netlify/database/migrations/` apply automatically on deploy.
 
 ## Contact details on the site
 
-No email address or phone number is published yet — the enquiry form (saved to Netlify Database) is the contact channel until the real ones are added. Still to add: real WhatsApp number, X profile URL, and real testimonials from the first run of the agency (the Reviews section is a working slider waiting for them). Instagram (@dave_leadgen) and LinkedIn (David Chibuike) are live in the footer + contact section. Dollar pricing: Starter $500, Growth $900; founding first month $400 / $750.
+No email address or phone number is published yet — the enquiry form (saved to Netlify Database) is the contact channel until the real ones are added. Still to add: real WhatsApp number and X profile URL. The Reviews section now shows the 6 real first-run client testimonials as optimized image slides. Instagram (@dave_leadgen) and LinkedIn (David Chibuike) are live in the footer + contact section. Dollar pricing: Starter $500, Growth $900; founding first month $400 / $750.
 
