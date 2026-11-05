@@ -8,7 +8,7 @@
 - `netlify/functions/contact.mts` — validates (all fields, email regex), inserts into `enquiries`, returns 201. Falls back to `{ok:true, stored:false}` if the DB isn't migrated yet so conversion never breaks.
 - `db/schema.ts` + `db/index.ts` — Drizzle schema/client (`drizzle-orm/netlify-db`; connection is automatic, no connection string).
 - `drizzle.config.ts` — `out` must stay `./netlify/database/migrations` for auto-apply on deploy.
-- `netlify.toml` — publish root `.`, functions dir, security + cache headers.
+- `netlify.toml` — publish root `.`, functions dir, security headers. CSS/JS use `max-age=0, must-revalidate` so deploys reach visitors immediately — a 7-day cache caused stale styles/scripts on repeat visits (5 Nov 2026: the currency toggle showed unstyled and didn't switch on a cached phone).
 
 ## Conventions
 
